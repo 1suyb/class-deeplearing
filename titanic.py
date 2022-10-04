@@ -32,6 +32,9 @@ if __name__ == "__main__" :
     _,test_x['alive'] = np.unique(test_x['alive'],return_inverse=True)
     _,test_x['alone'] = np.unique(test_x['alone'],return_inverse=True)
 
+    train_x.drop(['alive'],inplace=True,axis=1)
+    test_x.drop(['alive'],inplace=True,axis=1)
+
     train_y = np.ravel(train_x.survived)
     test_y = np.ravel(test_x.survived)
     train_x.drop(['survived'],inplace=True,axis=1)
